@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aggravo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AggravoBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#wrap {
+    width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+html,
+body {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+#top {
+    height: 100px;
+    width: 1920px;
+    position: fixed;
+    background-color: #fff;
+}
+
+.header-inner {
+    position: absolute;
+    top: 20px;
+    left: 350px;
+    z-index: 1000;
+}
+
+.header-inner img {
+    width: 166px;
+    display: block;
+}
+
+.nav {
+    position: absolute;
+    top: 50px;
+    right: 350px;
+    z-index: 1000;
+}
+
+.nav>ul {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.nav>ul>li {
+    position: relative;
+    font-family: 'Aggravo', sans-serif;
+}
+
+.nav>ul>li>a {
+    position: relative;
+}
+
+.nav>ul>li>a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transform: translateX(-50%);
+    transition: width 0.35s ease;
+}
+
+.nav>ul>li:hover>a {
+    font-weight: bold;
+}
+
+.nav>ul>li:hover>a::after {
+    width: 100%;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    padding-top: 18px;
+}
+
+.nav>ul>li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.submenu li {
+    margin-bottom: 10px;
+}
+
+.submenu li:last-child {
+    margin-bottom: 0;
+}
+
+.submenu a {
+    font-weight: 300;
+    transition: font-weight 0.2s ease;
+}
+
+.submenu a:hover {
+    font-weight: 700;
+}
